@@ -1,0 +1,141 @@
+/* Base Glassmorphism Style */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1); /* Translucent white background */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+  border-radius: 10px; /* Rounded corners */
+  backdrop-filter: blur(10px); /* Blur effect behind the card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+  padding: 15px; /* Inner spacing */
+  margin-bottom: 20px; /* Space between cards */
+  position: relative; /* For absolute positioning of buttons */
+}
+
+/* Comment Container */
+.comments-container {
+  padding: 20px;
+  /* Background gradient for the section */
+}
+
+/* Comment Card */
+.comment-card {
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden; /* Contain the sliding button */
+}
+
+.comment-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Changed to flex-start for better content alignment */
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  padding: 15px; /* Increased padding */
+  margin-top: 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 50px; /* Minimum height to prevent content jumps */
+}
+
+.comment-content span {
+  flex: 1; /* Allow text content to take available space */
+  margin-right: 15px; /* Space for the button */
+  word-wrap: break-word; /* Ensure long words don't overflow */
+}
+
+.reply-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(100%); /* Initially positioned off-screen */
+  right: 0;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px; /* Increased padding */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.2s;
+  opacity: 0;
+}
+
+.comment-card:hover .reply-button {
+  transform: translateY(-50%) translateX(0); /* Slide in on hover */
+  opacity: 1;
+}
+
+.reply-button:hover {
+  background-color: #0056b3;
+}
+
+/* Reply Cards */
+.reply-card {
+  margin-left: 40px; /* Increased indent for better visual hierarchy */
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word; /* Ensure text wraps properly */
+  max-width: calc(100% - 40px); /* Ensure it doesn't overflow the container */
+}
+
+/* Reply Input Section */
+.reply-input {
+  margin-top: 15px;
+  margin-left: 40px; /* Match reply card indent */
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  max-width: calc(100% - 40px);
+}
+
+.reply-input .MuiTextField-root {
+  flex: 1;
+}
+
+/* Comment Input Container */
+.comment-input-container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* General Text Styling */
+.comment-card span,
+.reply-card span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Fallback for browsers not supporting backdrop-filter */
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1); /* Fallback background */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(200, 200, 200, 0.1));
+  }
+
+  .reply-card {
+    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(200, 200, 200, 0.2));
+  }
+}

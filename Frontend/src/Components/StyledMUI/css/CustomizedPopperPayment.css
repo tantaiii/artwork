@@ -1,0 +1,152 @@
+.card-payment {
+  min-width: 300px;
+  text-align: center;
+  margin: auto;
+  width: 25%;
+  padding: 5px;
+  border-radius: 1rem;
+  background: #5a5a5a;
+  background: var(--background);
+  position: relative;
+  z-index: 1;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0; /* shorthand cho top:0; right:0; bottom:0; left:0 */
+  display: flex;
+  align-items: center; /* căn giữa theo chiều dọc */
+  justify-content: center; /* căn giữa theo chiều ngang */
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.img-noti {
+  width: 70%;
+  height: auto;
+  margin: auto;
+}
+
+.card-payment {
+  --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+  padding-top: 2%;
+  margin-top: 10%;
+  padding: 5px;
+  border-radius: 1rem;
+  overflow: visible !important;
+  background: #5a5a5a;
+  background: var(--background);
+  position: relative;
+  z-index: 1;
+}
+
+.card-payment::after {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.8);
+  filter: blur(100px);
+  background: #f7ba2b;
+  background: var(--background);
+  transition: opacity 0.5s;
+}
+
+.card-info {
+  --color: #181818;
+  background: var(--color);
+  color: var(--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  border-radius: 0.7rem;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+.text-payment-successfully {
+  font-weight: bolder !important;
+  background: linear-gradient(to right, #a5fa06, #d7f803, #f5642f, #a5fa06);
+  background-size: 200% 100%; /* Set the initial background size */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: moveGradient 6s linear infinite;
+  -moz-animation: moveGradient 6s linear infinite;
+  -o-animation: moveGradient 6s linear infinite;
+  animation: moveGradient 6s linear infinite;
+}
+
+.text-amount {
+  margin-top: -5%;
+  font-weight: bolder !important;
+  background: linear-gradient(to right, #fa06cd, #ff0b54, #f5322f, #fa06cd);
+  background-size: 200% 100%; /* Set the initial background size */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: moveGradient 6s linear infinite;
+  -moz-animation: moveGradient 6s linear infinite;
+  -o-animation: moveGradient 6s linear infinite;
+  animation: moveGradient 6s linear infinite;
+}
+
+.button-payment {
+  position: relative;
+  z-index: 1; /* Đảm bảo nội dung button nằm trên các pseudo-element */
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 3% !important;
+  background: linear-gradient(45deg, #ff0b54, #f5322f, #fa06cd);
+  padding: 14px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-payment::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: #272727;
+  border-radius: 9px;
+  transition: 0.5s;
+  z-index: -1; /* Đặt pseudo-element này phía dưới nội dung button */
+}
+
+.button-payment:hover::before {
+  opacity: 0.7;
+}
+
+.button-payment::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  background: linear-gradient(45deg, #ff0b54, #f5322f, #fa06cd);
+  border-radius: 9px;
+  transition: 0.5s;
+  opacity: 0;
+  filter: blur(20px);
+  z-index: -2; /* Đảm bảo nó nằm phía sau cả ::before và nội dung button */
+}
+
+.button-payment:hover::after {
+  opacity: 1;
+}

@@ -1,0 +1,102 @@
+/* Định dạng cho Box chứa thông tin (nếu cần) */
+.boxintroduct {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ để nổi bật */
+  margin-bottom: 20px;
+}
+
+/* Định dạng tiêu đề "About {user?.firstName} {user?.lastName}" */
+.headintroduct {
+  font-size: 45px;
+  font-weight: bold;
+  color: #04a1fd; /* Màu xanh dương, bạn có thể thay bằng theme.color2 nếu cần */
+  margin-bottom: 15px;
+  text-align: center; /* Canh giữa tiêu đề */
+  font-family: "Arthure";
+  src: url("/public/fonts/Arthure.ttf") format("truetype");
+
+  .package-title {
+    font-family: "Arthure";
+    font-size: 0px;
+    margin-bottom: 5%;
+  }
+}
+
+/* .headername{
+    font-size: 50px;
+    font-family: "Arthure";
+    src: url("/public/fonts/Arthure.ttf") format("truetype");
+
+    .package-title {
+        font-family: "Arthure";
+        font-size: 0px;
+        margin-bottom: 5%;
+    }
+  } */
+/* Định dạng các dòng thông tin */
+.contentintroduct {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa icon và text */
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 1.5;
+  font-family: "Artka";
+  src: url("/public/fonts/Artka.ttf") format("truetype");
+
+  .package-title {
+    font-family: "Artka";
+    font-size: 0px;
+    margin-bottom: 5%;
+  }
+}
+
+/* Định dạng icon trong contentintroduct */
+.iconintroduct {
+  color: #04a1fd; /* Màu xanh dương cho icon, bạn có thể thay bằng theme.color2 */
+  font-size: 20px; /* Kích thước icon */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .boxintroduct {
+    padding: 15px;
+  }
+
+  .headintroduct {
+    font-size: 20px;
+  }
+
+  .contentintroduct {
+    font-size: 14px;
+  }
+
+  .iconintroduct {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .boxintroduct {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .headintroduct {
+    font-size: 18px;
+  }
+
+  .contentintroduct {
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .iconintroduct {
+    font-size: 16px;
+  }
+}
+
+.dialog-custom .MuiPaper-root {
+  background: none !important;
+}

@@ -1,0 +1,99 @@
+.infor-user-post {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border: 2px solid #1565c0;
+  /* Viền xanh nổi bật */
+  border-radius: 20px;
+  /* Bo tròn góc */
+  margin-bottom: 20px;
+  width: fit-content;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+  /* Dùng cubic-bezier để làm mượt */
+}
+
+@font-face {
+  font-family: "Arthure";
+  src: url("/public/fonts/Arthure.ttf") format("truetype");
+}
+
+.package-title {
+  font-family: "Arthure";
+  font-size: 2em;
+  margin-bottom: 5%;
+}
+
+.infor-user-post:hover {
+  /* Làm nổi bật khi hover */
+  border-color: #1565c0;
+  transform: scale(1.05);
+  /* Hiệu ứng phóng to 5% khi hover */
+}
+
+.avatar-user-post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-user-post {
+  font-size: 70px;
+  font-weight: bold;
+  color: #1565c0;
+
+  font-family: "Arthure";
+  src: url("/public/fonts/Arthure.ttf") format("truetype");
+
+  .package-title {
+    font-family: "Arthure";
+    font-size: 0px;
+    margin-bottom: 5%;
+  }
+}
+
+.name-link {
+  text-decoration: none;
+  color: #1565c0;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.name-link:hover {
+  color: #1565c0;
+  text-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.6);
+}
+
+/* Thông tin bài đăng */
+.content-post-img {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #1565c0;
+  line-height: 1.8;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  /* Tạo nền nhẹ */
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  font-family: "Artka";
+  src: url("/public/fonts/Artka.ttf") format("truetype");
+
+  .package-title {
+    font-family: "Artka";
+    font-size: 0px;
+    margin-bottom: 5%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .infor-user-post {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.dialog-custom .MuiPaper-root {
+  background: none !important;
+}

@@ -1,0 +1,11 @@
+.image-custom {
+    height: 500px;
+    max-width: 100%;
+    border-radius: 5px;
+}
+.imgage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}

@@ -1,0 +1,26 @@
+.backdrop{
+    position: fixed;
+    width: 100vw;
+    height: 110vh;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+}
+.card{
+    padding-top: 5%;
+}
+.loginForm{
+    min-width: 300px;
+    text-align: center;
+    margin: auto;
+    width: 25%;
+    padding: 50px;
+    background-color: whitesmoke;
+    border-radius: 5%;
+}
+
+.normalLogin{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin-left: 5%;
+}

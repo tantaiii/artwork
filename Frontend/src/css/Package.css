@@ -1,0 +1,203 @@
+
+.packagePage {
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
+
+.packageContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 5% 5% 5% 5%;
+}
+
+.buyBtn {
+  width: 100%;
+  margin: auto;
+}
+
+/* Premium Text */
+.premium-typography {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.crown-icon {
+  margin-right: 0.1em;
+  font-size: 20px;
+  margin-top: -2%;
+  color: #1f4eb2; /* Gold color for the crown */
+}
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+.gradient-text {
+  background: linear-gradient(to right, #6419d4, #0422e0, #e83232, #0422e0);
+  background-size: 200% 100%; /* Set the initial background size */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: moveGradient 6s linear infinite;
+  -moz-animation: moveGradient 6s linear infinite;
+  -o-animation: moveGradient 6s linear infinite;
+  animation: moveGradient 6s linear infinite;
+}
+
+/* End Text */
+
+/*Add Fonts*/
+@font-face {
+  font-family: "UniSpace";
+  src: url("/public/fonts/UNISPACE.TTF") format("truetype");
+}
+
+.package-title {
+  font-family: "UniSpace";
+  font-size: 2em;
+  margin-bottom: 5%;
+}
+/* End Add Fonts */
+
+/* Card */
+.cardRank {
+  min-width: 377px;
+  min-height: 450px;
+  max-width: 377px;
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Thay đổi để nội dung không bị cố định giữa */
+  transition: 0.5s ease-in-out;
+  border-radius: 20px;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.cardRank::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(0deg, transparent, transparent 30%, rgba(0, 255, 255, 0.3));
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.cardRank:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.cardRank:hover::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
+}
+
+.cardRank img {
+  width: 70%;
+  object-fit: contain;
+}
+/* End Card */
+
+.artist-card {
+  min-height: 290px;
+  max-height: 290px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+  position: relative;
+  will-change: transform;
+}
+
+.artist-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.3);
+  filter: brightness(0.9);
+}
+
+/* Glowing gradient border using pseudo-element */
+.artist-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 12px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 150, 0.8),
+    rgba(0, 255, 200, 0.8),
+    rgba(0, 100, 255, 0.8),
+    rgba(0, 255, 200, 0.8),
+    rgba(255, 0, 150, 0.8),
+    rgba(0, 255, 200, 0.8),
+    rgba(0, 100, 255, 0.8)
+  );
+  background-size: 300% 300%;
+  animation: glowing-border 9s linear infinite;
+  z-index: -1;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+/* Show animated border on hover with smooth opacity transition */
+.artist-card:hover::before {
+  opacity: 1;
+}
+
+/* Glowing border animation keyframes */
+@keyframes glowing-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  150% {
+    background-position: 100% 50%;
+  }
+}
+
+.artist-card::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: background 0.5s ease;
+}
+
+/* Optional adjustments for child elements */
+.artist-card-img {
+  padding: 1rem;
+}
+
+.artist-card-content {
+  padding: 1rem;
+}
+
+.artist-card-button {
+  transition: all 0.3s ease;
+}

@@ -1,0 +1,166 @@
+.footer {
+  position: relative;
+  padding: 64px 0 32px;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-heading {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 24px !important;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.5;
+  transition: width 0.3s ease;
+}
+
+.footer-section:hover .footer-heading::after {
+  width: 48px;
+}
+
+.footer-content {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.footer-section:hover .footer-content {
+  opacity: 1;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px !important;
+  transition: transform 0.2s ease;
+}
+
+.contact-item:hover {
+  transform: translateX(8px);
+}
+
+.contact-icon {
+  opacity: 0.7;
+  font-size: 20px !important;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-4px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.newsletter-form {
+  margin-top: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: inherit;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  height: 45px; /* Fixed height to match the button */
+}
+
+.newsletter-input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-button {
+  position: absolute !important;
+  right: 4px;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 6px !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.footer-bottom {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Responsive styles */
+@media (max-width: 960px) {
+  .footer {
+    padding: 48px 0 24px;
+  }
+
+  .footer-section {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-item {
+    margin-bottom: 12px !important;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .newsletter-form {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
